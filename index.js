@@ -5,7 +5,8 @@ const FileStore = require('session-file-store')(session)
 const flash = require('express-flash')
 
 const app = express()
-
+const port = process.env.PORT || 3000; // Usando a variável de ambiente PORT ou a porta 3000 como padrão
+require('dotenv').config()
 const conn = require('./db/conn')
 
 //Models
@@ -72,7 +73,7 @@ app.get('/', ToughtController.showToughts)
 
 conn
 .sync().then(() => {
-    app.listen(3000, () => {
-        console.log("Servidor rodando na porta:", 3000)
+    app.listen(port, () => {
+        console.log("Servidor rodando na porta:", port)
     })
 }).catch((err) => console.log(err))
