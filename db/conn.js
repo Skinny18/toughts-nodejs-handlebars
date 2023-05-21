@@ -7,6 +7,7 @@ const sequelize = new Sequelize('toughts', 'root', '12345678', {
     dialect: 'mysql'
 })
 
+
 try{
     sequelize.authenticate()
     console.log('Conectado ao MySQL!')
