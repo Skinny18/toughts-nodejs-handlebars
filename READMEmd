@@ -1,9 +1,0 @@
-docker network create minha-rede
-
-docker run --name mysql-container --network minha-rede -e MYSQL_ROOT_PASSWORD=sua_senha -d mysql:latest
-
-docker run --name node-container --network minha-rede -p 3000:3000 -d node:latest
-
-
-sudo docker exec -it mysql-container mysql -u root -p
-
